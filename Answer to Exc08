@@ -13,14 +13,18 @@
 +          Input <- substr(Input_Num,1,2)
 #if input number more than randomly generates, print higher
 +            if (Input > Ramdon_Num){
-+                 return("Higher,Try again.")}
++                 print("Higher,Try again.")}
 #if input number less than randomly generates, print lower
 +             
 +             else if (Input< Ramdon_Num){
-+             return("lower, Try again")}
++             print("lower, Try again")}
 #f input number equals randomly generates, print Con! Correct!
 +             
 +             else if (Input == Ramdon_Num){
-+              return("Con! Correct!")}
++              print("Con! Correct!")}
+# MAx trial is 10 times, if over 10 times, print Game over
++           i=i+1
++           if(i>=10){
++     print("Game Over")
 +     }
 +   }
