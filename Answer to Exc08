@@ -29,13 +29,25 @@
 +     }
 +   }
 Q1
-UWvsMSU <-  read.csv("UWvMSU_1-22-13.txt", header = TRUE, sep = "\t", quote = "") 
-+  library(ggplot2)
-+ library(cowplot)
-+  UW<- UWvsMSU[which(UWvsMSU[,2]=="UW"),]
-+  MSU<-UWvsMSU[which(UWvsMSU[,2]=="MSU"),]
-+  UW
-+  UW_time<- UW[,1]
-+  UW_scores<- UW[,3]
-+  MSU_time<- MSU[,1]
-+  MSU_scores<-MSU[,3]
+#read file
+ UWvsMSU <-  read.csv("UWvMSU_1-22-13.txt", header = TRUE, sep = "\t", quote = "") 
+>  library(ggplot2)
+>  library(cowplot)
+>  #seprate them into two files:UW and MSU
+>  UW<- UWvsMSU[which(UWvsMSU[,2]=="UW"),]
+>  MSU<-UWvsMSU[which(UWvsMSU[,2]=="MSU"),]
+> #seprate number to different files
+>  UW_time<- UW[,1]
+>  UW_scores<- UW[,3]
+>  MSU_time<- MSU[,1]
+>  MSU_scores<-MSU[,3]
+>  use cumsum fumction
+> for(i in 1:length(UW_scores)){
++     UW_scores[i] <- cumsum(UW_scores[i])
++   }
+> 
+>  for (i in 1:length(MSU_scores)){
++    MSU_scores[i]<-cumsum(MSU_scores[i])
++    }
+>   # use plot function
+>  plot(UW_time,UW_sumscores,x="Time",y="Scores",color="blue")
