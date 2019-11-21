@@ -28,3 +28,14 @@
 +     print("Game Over")
 +     }
 +   }
+Q1
+UWvsMSU <-  read.csv("UWvMSU_1-22-13.txt", header = TRUE, sep = "\t", quote = "") 
++  library(ggplot2)
++ library(cowplot)
++  UW<- UWvsMSU[which(UWvsMSU[,2]=="UW"),]
++  MSU<-UWvsMSU[which(UWvsMSU[,2]=="MSU"),]
++  UW
++  UW_time<- UW[,1]
++  UW_scores<- UW[,3]
++  MSU_time<- MSU[,1]
++  MSU_scores<-MSU[,3]
